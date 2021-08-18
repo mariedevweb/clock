@@ -11,15 +11,22 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 // Mock data for frontend
-const timezone = {
-    name: 'Japan',
-    region: 'Asia/Tokyo',
-    offset: '+09:00'
-}
+const timezones = [
+    {
+        name: 'Japan',
+        region: 'Asia/Tokyo',
+        offset: '+09:00'
+    },
+    {
+        name: 'Current timezone',
+        region: '',
+        offset: ''
+    }
+]
 
 // Routes
 app.get('/', (req, res) => {
-    res.status(200).send(timezone);
+    res.status(200).send(timezones);
 });
 
 // listen on the port

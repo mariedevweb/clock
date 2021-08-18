@@ -1,28 +1,34 @@
 <template>
   <div class="home max-width-container">
-    {{ timezone }}
+    <div v-for="timezone in timezones" :key="timezone.name">
+      <timezone-card :timezone="timezone"></timezone-card>
+    </div>
   </div>
 </template>
 
 <script>
 import Server from '@/server/Server.js';
+import TimezoneCard from '@/components/TimezoneCard.vue';
 
 export default {
   name: 'Home',
+  components: {
+    TimezoneCard
+  },
   data() {
     return {
-      timezone: {}
+      timezones: []
     }
   },
   created() {
-    this.getTimezoneData();
+    this.getTimezonesData();
   },
   methods: {
-    async getTimezoneData() {
-      Server.getTimezone()
+    async getTimezonesData() {
+      Server.getTimezones()
       .then(
-        (timezone => {
-          this.$set(this, "timezone", timezone);
+        (timezones => {
+          this.$set(this, "timezones", timezones);
         }).bind(this)
       );
     }
