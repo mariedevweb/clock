@@ -15,12 +15,10 @@ const timezones = [
     {
         name: 'Japan',
         region: 'Asia/Tokyo',
-        offset: '+09:00'
     },
     {
         name: 'Current timezone',
         region: '',
-        offset: ''
     }
 ]
 

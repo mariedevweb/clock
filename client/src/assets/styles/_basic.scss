@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    background-image: url('../img/bg-sunrise-flou.png');
+    background-size: cover;
+    background-position: center;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    max-width: 100%;
+}
+main {
+    flex-grow: 1;
+}
+svg {
+    color: currentColor;
+}
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
